@@ -48,10 +48,10 @@ function App() {
       });
       setTestSteps(appendedSteps.trim());
 
-      alert('XPaths fetched and stored successfully!');
+      //alert('XPaths fetched and stored successfully!');
     } catch (e) {
       console.error(e);
-      alert('Error storing or fetching XPaths');
+      //alert('Error storing or fetching XPaths');
     }
   };
 
