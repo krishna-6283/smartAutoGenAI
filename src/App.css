@@ -1,0 +1,440 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;  /* 👈 Align items from the top */
+  min-height: 100vh;        /* ✅ Allow growing with content */
+  color: #f1f1f1;
+  padding: 20px;
+  overflow-y: auto;         /* ✅ Keep this to allow scroll */
+}
+
+
+.app-container {
+  width: 1200px;
+  background-color: #2c2c2c;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  overflow: visible;
+  height: 100vh;
+  overflow-y:auto ;
+  
+}
+
+.app-header {
+  text-align: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #3b3b3b;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  color: #f1f1f1;
+  font-weight: bold;
+}
+
+/* Main content - Flexbox layout */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 1.5rem;
+  overflow: visible;
+}
+
+/* Left side: Input section */
+
+
+.input-instructions p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #b0b0b0;
+}
+
+.input-instructions ol {
+  padding-left: 18px;
+  margin-bottom: 1rem;
+  color: #b0b0b0;
+}
+
+/* Buttons for Text Input and Voice Input */
+.input-mode-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+button.text-input-btn,
+button.voice-input-btn {
+  background-color: #3a3a3a;
+  color: #f1f1f1;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: 140px;
+}
+
+button.text-input-btn:hover,
+button.voice-input-btn:hover {
+  background-color: #575757;
+}
+
+button.text-input-btn.active,
+button.voice-input-btn.active {
+  background-color: #4caf50; /* Bright green to indicate active state */
+  color: #fff;
+}
+
+button.text-input-btn:focus,
+button.voice-input-btn:focus {
+  outline: none;
+}
+
+/* Dropdown for tool and language */
+select.language-dropdown,
+select.tool-dropdown {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #4f4f8b;
+  border-radius: 8px;
+  background-color: #3b3b3b;
+  color: #f1f1f1;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+textarea.test-case-input,
+textarea.test-steps-input,
+textarea.test-data-input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #4f4f8b;
+  border-radius: 8px;
+  background-color: #3b3b3b;
+  color: #f1f1f1;
+}
+
+textarea.test-case-input {
+  height: 130px;
+}
+
+textarea.test-steps-input,
+textarea.test-data-input {
+  height: 100px;
+}
+
+button.generate-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button.generate-btn:hover {
+  background-color: #45a049;
+}
+
+button.generate-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* Right side: Output section */
+.output-section {
+  width: 600px;
+}
+
+.output-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #f1f1f1;
+}
+
+.code-output {
+  border: 1px solid #4f4f8b;
+  padding: 12px;
+  background-color: #2b2b2b;
+  max-height: 300px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Courier New', monospace;
+  color: #f1f1f1;
+}
+
+.code-controls {
+  margin-top: 10px;
+  text-align: right;
+}
+
+button.copy-btn {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.copy-btn:hover {
+  background-color: #1976d2;
+}
+
+select.language-dropdown:hover,
+select.tool-dropdown:hover,
+select.language-dropdown:focus,
+select.tool-dropdown:focus {
+  background-color: #4f4f8b;
+  border-color: #1976d2;
+}
+/* Sliding container */
+/* Set a fixed height for the input-section */
+.input-section {
+  width: 60%;
+  height: 500px; /* Adjust to the desired height */
+  position: relative; /* Ensure the sliding effect works correctly */
+  overflow-x: hidden; /* Prevent overflow from new elements */
+}
+
+/* Make the sliding container fill the available height */
+.sliding-container {
+  height: 100%; /* Make it match the parent container height */
+  display: flex;
+  flex-direction: column; /* Ensure elements inside stack vertically */
+  justify-content: space-between; /* Space elements to fit evenly */
+}
+
+
+/* When in text input mode, slide to the left */
+.sliding-container.slide-left {
+  transform: translateX(0); /* Original position */
+}
+
+/* When in voice input mode, slide to the right */
+.sliding-container.slide-right {
+  transform: translateX(100%); /* Slide out to the right */
+}
+
+/* Additional styles for voice input */
+.voice-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3b3b3b;
+  border: 1px solid #4f4f8b;
+  border-radius: 8px;
+  padding: 20px;
+  color: #f1f1f1;
+  margin-top: 8px;
+}
+
+button.record-btn {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+}
+
+button.record-btn:hover {
+  background-color: #e64a19;
+}
+/* Style for the additional textarea in voice input mode */
+textarea.additional-input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  font-size: 1rem;
+  border: 1px solid #4f4f8b;
+  border-radius: 8px;
+  background-color: #3b3b3b;
+  color: #f1f1f1;
+  height: 100px; /* Adjust the height as needed */
+}
+
+/* Style for the textareas inside sliding-container */
+textarea.test-case-input,
+textarea.test-steps-input,
+textarea.test-data-input,
+textarea.additional-input {
+  flex: 1;
+  margin-bottom: 10px; /* Add some space between elements */
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #4f4f8b;
+  border-radius: 8px;
+  background-color: #3b3b3b;
+  color: #f1f1f1;
+  max-height: 130px; /* Limit height for text areas */
+}
+
+/* Adjust the button height to prevent resizing */
+button.record-btn {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+/* Make sure the additional textarea below the button fits in */
+textarea.additional-input {
+  height: 100px; /* Adjust based on how much space you want */
+}
+
+/* Transitions for sliding effect */
+.sliding-container {
+  transition: transform 0.6s ease-in-out;
+}
+/* Set a larger height for the input-section */
+.input-section {
+  width: 60%;
+  height: 650px; /* Increased height to fit all input elements */
+  position: relative; /* Ensure the sliding effect works correctly */
+  overflow: hidden; /* Prevent overflow from new elements */
+}
+
+/* Ensure the sliding container fills the available height */
+.sliding-container {
+  height: 100%; /* Match the parent container height */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: space-between; /* Ensure even spacing */
+}
+
+/* Adjust text areas' height to fit within the new container size */
+textarea.test-case-input,
+textarea.test-steps-input,
+textarea.test-data-input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  border: 1px solid #4f4f8b;
+  border-radius: 8px;
+  background-color: #3b3b3b;
+  color: #f1f1f1;
+  height: 110px; /* Reduced height to fit all input areas */
+}
+
+/* Adjust the generate button to fit nicely */
+button.generate-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 100%;
+  margin-top: 20px; /* Added margin to separate it from input fields */
+  transition: background-color 0.3s ease;
+}
+
+button.generate-btn:hover {
+  background-color: #45a049;
+}
+
+button.generate-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* Right side: Output section */
+.output-section {
+  width: 600px;
+  max-height: 600px; /* Set a maximum height for the entire section */
+}
+
+.output-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #f1f1f1;
+}
+
+/* Adjusting code-output to allow it to grow and scroll if needed */
+.code-output {
+  border: 1px solid #4f4f8b;
+  padding: 12px;
+  background-color: #2b2b2b;
+  max-height: 400px; /* Set max-height to ensure it doesn't overflow too much */
+  min-height: 200px; /* Ensures there's some minimum height */
+  overflow-y: auto; /* Allows scrolling if the content exceeds the max-height */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Courier New', monospace;
+  color: #f1f1f1;
+}
+
+.code-controls {
+  margin-top: 10px;
+  text-align: right;
+}
+
+button.copy-btn {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.copy-btn:hover {
+  background-color: #1976d2;
+}
+
+.url-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+
+.fetch-xpath-btn {
+  padding: 10px 16px;
+  background-color: #45a049;
+;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.3s;
+}
+
+.fetch-xpath-btn:hover {
+  background-color: #0dda17;
+}
+
