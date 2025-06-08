@@ -118,7 +118,7 @@ function App() {
       <div className="main-content">
         <div className="input-section">
           {/* Tool and Language Dropdowns */}
-          <h3>Select Tools and Language</h3> 
+          <h5>Select Tools and Language</h5> 
           <select value={selectedTool} onChange={(e) => setSelectedTool(e.target.value)} className="tool-dropdown">
             <option value="Selenium">Selenium</option>
             <option value="Katalon">Katalon</option>
