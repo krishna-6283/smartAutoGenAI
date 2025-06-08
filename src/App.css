@@ -32,7 +32,7 @@ body {
 
 .app-header {
   text-align: center;
-  padding-bottom: 1.5rem;
+  padding-bottom: 2.2rem;
   border-bottom: 2px solid #3b3b3b;
 }
 
@@ -123,9 +123,9 @@ textarea.test-case-input,
 textarea.test-steps-input,
 textarea.test-data-input {
   width: 100%;
-  padding: 12px;
-  margin-top: 8px;
-  margin-bottom: 15px;
+  padding: 6px;
+  margin-top: 6px;
+  margin-bottom: 7px;
   font-size: 1rem;
   border: 1px solid #4f4f8b;
   border-radius: 8px;
@@ -139,7 +139,7 @@ textarea.test-case-input {
 
 textarea.test-steps-input,
 textarea.test-data-input {
-  height: 100px;
+  height: 70px;
 }
 
 button.generate-btn {

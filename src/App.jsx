@@ -158,7 +158,7 @@ function App() {
           <div className="input-container">
             {inputMode === 'text' && (
               <>
-              <h3>Describe Test Case</h3>
+              <h5>Describe Test Case</h5>
                 <textarea
                   value={testCase}
                   onChange={(e) => setTestCase(e.target.value)}
@@ -166,7 +166,7 @@ function App() {
                   className="test-case-input"
                 ></textarea>
                 {/* XPath URL Input and Fetch Button */}
-                <h3>Enter URL</h3>
+                <h5>Enter URL</h5>
                 <input
                   type="text"
                   value={url}
@@ -180,7 +180,7 @@ function App() {
                   placeholder="Describe the steps for the test case..."
                   className="test-steps-input"
                 ></textarea> */}
-                <h3>Provide Test Data</h3>
+                <h5>Provide Test Data</h5>
                 <textarea
                   value={testData}
                   onChange={(e) => setTestData(e.target.value)}
