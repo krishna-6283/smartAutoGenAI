@@ -112,12 +112,13 @@ function App() {
   return (
     <div className="app-container">
       <header className="app-header">
-        <h1>Smart Auto GenAI</h1>
+        <h3>Smart Auto GenAI</h3>
       </header>
 
       <div className="main-content">
         <div className="input-section">
           {/* Tool and Language Dropdowns */}
+          <h3>Select Tools and Language</h3> 
           <select value={selectedTool} onChange={(e) => setSelectedTool(e.target.value)} className="tool-dropdown">
             <option value="Selenium">Selenium</option>
             <option value="Katalon">Katalon</option>
@@ -157,6 +158,7 @@ function App() {
           <div className="input-container">
             {inputMode === 'text' && (
               <>
+              <h3>Describe Test Case</h3>
                 <textarea
                   value={testCase}
                   onChange={(e) => setTestCase(e.target.value)}
@@ -164,11 +166,12 @@ function App() {
                   className="test-case-input"
                 ></textarea>
                 {/* XPath URL Input and Fetch Button */}
+                <h3>Enter URL</h3>
                 <input
                   type="text"
                   value={url}
                   onChange={(e) => setUrl(e.target.value)}
-                  placeholder="Enter URL to store XPaths"
+                  placeholder="Enter URL"
                   className="url-input"
                 />
                 {/* <textarea
@@ -177,6 +180,7 @@ function App() {
                   placeholder="Describe the steps for the test case..."
                   className="test-steps-input"
                 ></textarea> */}
+                <h3>Provide Test Data</h3>
                 <textarea
                   value={testData}
                   onChange={(e) => setTestData(e.target.value)}
