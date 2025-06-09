@@ -79,15 +79,11 @@ function App() {
               content: `I'm using this for generating code for ${selectedTool} in ${selectedLanguage}.`,
             },
             //fine tuning
-           /* {
-              role: 'user',
-              content: `Generate a code snippet in ${selectedLanguage} that performs the following task: Test case - "${testCase}", Steps - "${testSteps}", Data - "${testData}". The code must start by opening the URL: "${url}". Use only the elements from the following list that are relevant to the steps: ${JSON.stringify(xpaths)}. For element selectors, prefer By.name, By.id, or CSS selectors if available, and only use XPath if necessary. STRICT INSTRUCTIONS: Provide only the code without any explanations, markdown, or extra formatting. No comments and imports.`,
-            },*/
             {
               role: 'user',
-              content: `Generate a clean and executable test automation script in ${selectedLanguage} that performs the following test case: "${testCase}". Follow these steps: "${testSteps}" using the test data: "${testData}". The script must begin by navigating to the URL: "${url}". Use only the relevant selectors from the provided list: ${JSON.stringify(xpaths)}. Prioritize using By.name, By.id, or CSS selectors where available; use XPath **only** when no other selector is applicable. Strictly output only the complete code — no markdown, no comments, no explanatory text. Do not include any unused imports or declarations.`,
+              content: `Generate a code snippet in ${selectedLanguage} that performs the following task: Test case - "${testCase}", Steps - "${testSteps}", Data - "${testData}". The code must start by opening the URL: "${url}". Use only the elements from the following list that are relevant to the steps: ${JSON.stringify(xpaths)}. For element selectors, prefer By.name, By.id, or CSS selectors if available, and only use XPath if necessary. STRICT INSTRUCTIONS: Provide only the code without any explanations, markdown, or extra formatting. No comments and imports.`,
             },
-
+          
           ],
           max_tokens: 300,
         },
