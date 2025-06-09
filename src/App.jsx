@@ -92,7 +92,7 @@ function App() {
       const generatedText = response.data.choices[0].message.content;
       // If the model returns multiple code blocks, only keep the first one
       const firstCode = generatedText.split(/```[\s\S]*?```/)[0].trim() || generatedText.trim();
-      const cleanCode = ""
+      const cleanCode = firstCode
         .replace(/^[\s`]+/, '')
         .replace(/[\s`]+$/, '');
       setGeneratedCode(cleanCode);
