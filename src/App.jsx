@@ -113,7 +113,7 @@ function App() {
   return (
     <div className="app-container">
       <header className="app-header">
-        <h3>Smart Automation GenAI </h3>
+        <h3>Smart Auto GenAI </h3>
       </header>
 
       <div className="main-content">
