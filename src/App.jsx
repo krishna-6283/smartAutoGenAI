@@ -72,7 +72,7 @@ function App() {
           'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
         },
         data: {
-          model: 'gpt-4.1',
+          model: 'gpt-4',
           messages: [
             {
               role: 'system',
