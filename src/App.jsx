@@ -92,7 +92,7 @@ function App() {
               Start by navigating to: "${url}"
 
               and then perform the steps described in the "${testCase}".
-              Use only the locator from the following list that are relevant or unique for the steps elements: (prefer By.id, By.name; use XPath ONLY if exists):
+              Use only the locator from the following list that are relevant or unique for the steps elements:( use XPath ONLY if exists):
               ${JSON.stringify(xpaths)}
 
               STRICT INSTRUCTIONS:
