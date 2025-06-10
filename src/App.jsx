@@ -91,7 +91,6 @@ function App() {
                 Steps: "${testSteps}".
                 Input Data: "${testData}".
             
-                For element selectors, Prioritize By.name, By.id, or CSS selectors if available, and use XPath **only if no other option** exists
                 include require or import statements for the selected tool ${selectedTool} and language ${selectedLanguage}.
                 
                 STRICT INSTRUCTIONS:
