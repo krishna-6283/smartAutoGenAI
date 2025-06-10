@@ -76,7 +76,8 @@ function App() {
           messages: [
             {
               role: 'system',
-              content: `I'm using this for generating code for ${selectedTool} in ${selectedLanguage}.`,
+              //content: `I'm using this for generating code for ${selectedTool} in ${selectedLanguage}.`,
+              content: `You are an expert QA automation engineer. Generate high-quality automation code for ${selectedTool} using ${selectedLanguage}.`,
             },
             //fine tuning
             {
