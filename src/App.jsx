@@ -86,6 +86,9 @@ function App() {
           
           ],
           max_tokens: 300,
+          temperature: 0.2, // Lower temperature for more deterministic output
+          top_p: 1.0,
+          frequency_penalty: 0.0,   
         },
       });
 
