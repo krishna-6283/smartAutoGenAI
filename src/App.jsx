@@ -96,6 +96,7 @@ function App() {
                 - Use only selectors from the provided list.
                 - Do not include unused elements.
                 - Ensure the code is production-ready and minimal.
+                - include require or import statements for the selected tool ${selectedTool} and language ${selectedLanguage}.
                 `
             },
             
