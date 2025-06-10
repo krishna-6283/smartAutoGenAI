@@ -74,6 +74,7 @@ function App() {
         data: {
           model: 'o4-mini', // Use the latest 
           reasoning: {"effort": "medium"},
+          tools:[{"type": "code_interpreter"}],
           messages: [
             {
               role: 'system',
