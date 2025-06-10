@@ -93,7 +93,7 @@ function App() {
               Use only the elements from the following list that are relevant to the steps: ${JSON.stringify(xpaths)}. For element selectors, Prioritize By.name, By.id, or CSS selectors if available, and use XPath **only if no other option** exists
 
               STRICT INSTRUCTIONS:
-              - Output ONLY the code (no markdown, no explanations, no comments, no imports).
+              - Output ONLY the code (no markdown, no explanations, no comments).
               - Use only selectors from the provided list.
               - Do not include unused elements.
               - Ensure the code is minimal, correct, and ready to run.
