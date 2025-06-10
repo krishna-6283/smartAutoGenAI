@@ -90,9 +90,9 @@ function App() {
               Steps: "${testSteps}"
               Input Data: "${testData}"
               Start by navigating to: "${url}"
-              The code must start by opening the URL: "${url}" 
-              and then perform the steps described in the test case.
-              Use only the elements from the following list that are relevant to the steps: (prefer By.id, By.name; use XPath ONLY if exists):
+
+              and then perform the steps described in the "${testCase}".
+              Use only the locator from the following list that are relevant or unique for the steps elements: (prefer By.id, By.name; use XPath ONLY if exists):
               ${JSON.stringify(xpaths)}
 
               STRICT INSTRUCTIONS:
