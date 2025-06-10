@@ -90,9 +90,7 @@ function App() {
                 Test Case: "${testCase}".
                 Steps: "${testSteps}".
                 Input Data: "${testData}".
-            
-                include require or import statements for the selected tool ${selectedTool} and language ${selectedLanguage}.
-                
+              
                 STRICT INSTRUCTIONS:
                 - Output ONLY the code (no markdown, no explanations, no comments).
                 - Use only selectors from the provided list.
