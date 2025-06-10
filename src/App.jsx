@@ -73,8 +73,8 @@ function App() {
         },
         data: {
           model: 'gpt-4.1', // Use the latest 
-          reasoning: {"effort": "medium"},
-          tools:[{"type": "code_interpreter"}],
+         // reasoning: {"effort": "medium"},
+          //tools:[{"type": "code_interpreter"}],
           messages: [
             {
               role: 'system',
@@ -107,7 +107,7 @@ function App() {
         },
       });
 
-      const generatedText = response.data.choices[1].message.content;
+      const generatedText = response.data.choices[0].message.content;
       // If the model returns multiple code blocks, only keep the first one
       const firstCode = generatedText.split(/```[\s\S]*?```/)[1].trim() || generatedText.trim();
       const cleanCode = firstCode
