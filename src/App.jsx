@@ -91,12 +91,12 @@ function App() {
                 Steps: "${testSteps}".
                 Input Data: "${testData}".
             
-                Use only the elements from the following list that are relevant to the steps: ${JSON.stringify(xpaths)}. For element selectors, Prioritize By.name, By.id, or CSS selectors if available, and use XPath **only if no other option** exists
+                For element selectors, Prioritize By.name, By.id, or CSS selectors if available, and use XPath **only if no other option** exists
                 include require or import statements for the selected tool ${selectedTool} and language ${selectedLanguage}.
+                
                 STRICT INSTRUCTIONS:
                 - Output ONLY the code (no markdown, no explanations, no comments).
                 - Use only selectors from the provided list.
-                - Do not include unused elements.
                 - Ensure the code is production-ready and minimal.
 
                 `
