@@ -90,13 +90,13 @@ function App() {
                 Input Data: "${testData}".
             
                 Use only the elements from the following list that are relevant to the steps: ${JSON.stringify(xpaths)}. For element selectors, Prioritize By.name, By.id, or CSS selectors if available, and use XPath **only if no other option** exists
-
+                include require or import statements for the selected tool ${selectedTool} and language ${selectedLanguage}.
                 STRICT INSTRUCTIONS:
                 - Output ONLY the code (no markdown, no explanations, no comments).
                 - Use only selectors from the provided list.
                 - Do not include unused elements.
                 - Ensure the code is production-ready and minimal.
-                - include require or import statements for the selected tool ${selectedTool} and language ${selectedLanguage}.
+
                 `
             },
             
@@ -110,7 +110,7 @@ function App() {
 
       const generatedText = response.data.choices[1].message.content;
       // If the model returns multiple code blocks, only keep the first one
-      const firstCode = generatedText.split(/```[\s\S]*?```/)[0].trim() || generatedText.trim();
+      const firstCode = generatedText.split(/```[\s\S]*?```/)[1].trim() || generatedText.trim();
       const cleanCode = firstCode
         .replace(/^[\s`]+/, '')
         .replace(/[\s`]+$/, '');
