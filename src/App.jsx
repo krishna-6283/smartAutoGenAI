@@ -72,7 +72,7 @@ function App() {
           'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
         },
         data: {
-          model: 'o4-mini', // Use the latest 
+          model: 'gpt-4.1', // Use the latest 
           reasoning: {"effort": "medium"},
           tools:[{"type": "code_interpreter"}],
           messages: [
@@ -84,7 +84,7 @@ function App() {
             //fine tuning
             {
               role: 'user',
-              content: `Generate a code snippet in ${selectedLanguage} that performs the following task: Test case - "${testCase}", Steps - "${testSteps}", Data - "${testData}". The code must start by opening the URL: "${url}". Use only the elements from the following list that are relevant to the steps: ${JSON.stringify(xpaths)}. For element selectors, prefer By.name, By.id, or CSS selectors if available, and only use XPath if necessary. STRICT INSTRUCTIONS: Provide only the code without any explanations, markdown, or extra formatting. No comments and imports.`,
+              content: `Generate a code snippet in ${selectedLanguage} that performs the following task: Test case - "${testCase}", Steps - "${testSteps}", Data - "${testData}". The code must start by opening the URL: "${url}". Use only the elements from the following list that are relevant to the steps: ${JSON.stringify(xpaths)}. For element selectors, prefer By.name, By.id, or CSS selectors if available, and only use XPath if necessary. STRICT INSTRUCTIONS: Provide only the code without any explanations, markdown, or extra formatting.`,
               //content: `Write a test script in ${selectedLanguage} for the following test case: "${testCase}". Steps: "${testSteps}". Input Data: "${testData}". Start by navigating to URL: "${url}". Use only unique selectors from the provided list: ${JSON.stringify(xpaths)}. Prioritize By.id, By.name,By.className,By.tagName,By.linkText,By.partialLinkText or CSS selectors; use XPath **only if no other option** exists. Return ONLY the working code. Do NOT include markdown, explanations, comments, or unused elements. Ensure the code is production-ready and minimal.`,
               /* content: `You are an expert QA automation engineer. Generate high-quality automation code snippet for ${selectedTool} using ${selectedLanguage} for the following scenario:
                 Test Case: "${testCase}".
