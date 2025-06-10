@@ -72,7 +72,7 @@ function App() {
           'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
         },
         data: {
-          model: 'gpt-4',
+          model: 'gpt-3.5-turbo',
           messages: [
             {
               role: 'system',
@@ -89,8 +89,7 @@ function App() {
           ],
           max_tokens: 300,
           temperature: 0.2, // Lower temperature for more deterministic output
-          top_p: 1.0,
-          frequency_penalty: 0.0,   
+       
         },
       });
 
