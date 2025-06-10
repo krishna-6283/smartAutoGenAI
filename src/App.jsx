@@ -84,22 +84,20 @@ function App() {
               role: 'user',
               //content: `Generate a code snippet in ${selectedLanguage} that performs the following task: Test case - "${testCase}", Steps - "${testSteps}", Data - "${testData}". The code must start by opening the URL: "${url}". Use only the elements from the following list that are relevant to the steps: ${JSON.stringify(xpaths)}. For element selectors, prefer By.name, By.id, or CSS selectors if available, and only use XPath if necessary. STRICT INSTRUCTIONS: Provide only the code without any explanations, markdown, or extra formatting. No comments and imports.`,
               //content: `Write a test script in ${selectedLanguage} for the following test case: "${testCase}". Steps: "${testSteps}". Input Data: "${testData}". Start by navigating to URL: "${url}". Use only unique selectors from the provided list: ${JSON.stringify(xpaths)}. Prioritize By.id, By.name,By.className,By.tagName,By.linkText,By.partialLinkText or CSS selectors; use XPath **only if no other option** exists. Return ONLY the working code. Do NOT include markdown, explanations, comments, or unused elements. Ensure the code is production-ready and minimal.`,
-               content: `You are a expert QA automation engineer. Generate high-quality automation code for ${selectedTool} using ${selectedLanguage} for the following scenario:
-
-              Test Case: "${testCase}"
-              Steps: "${testSteps}"
-              Input Data: "${testData}"
-              Start by navigating to: "${url}"
-
-              and then perform the steps described in the "${testCase}".
-              Use only the locator from the following list that are relevant or unique for the steps elements:
-              ${JSON.stringify(xpaths)}
+               content: `You are a expert QA automation engineer. Generate high-quality automation test script for ${selectedTool} using ${selectedLanguage} for the following scenario:
+              Start by navigating to the URL: "${url}".
+              Test Case: "${testCase}".
+              Steps: "${testSteps}".
+              Input Data: "${testData}".
+            
+              Use only the elements from the following list that are relevant to the steps: ${JSON.stringify(xpaths)}. For element selectors, Prioritize By.name, By.id, or CSS selectors if available, and use XPath **only if no other option** exists
 
               STRICT INSTRUCTIONS:
               - Output ONLY the code (no markdown, no explanations, no comments, no imports).
               - Use only selectors from the provided list.
               - Do not include unused elements.
               - Ensure the code is minimal, correct, and ready to run.
+              - Ensure the code is production-ready and minimal.
               `
             },
             
